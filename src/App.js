@@ -2,21 +2,14 @@ import './App.css';
 
 import React, { Component } from 'react';
 
-import { Button } from 'semantic-ui-react'
-import logo from './logo.svg';
+import NavMenu from './NavMenu'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <Button primary content='Hey we made it' />
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <NavMenu />
+        {/* // TODO: Add react router as HW */}
       </div>
     );
   }
