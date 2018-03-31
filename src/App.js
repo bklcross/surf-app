@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import Apps from './App.js'
+import NavMenu from './components/NavMenu'
+import Home from './components/Home'
+import GetStarted from './components/GetStarted'
+import AboutUs from './components/AboutUs'
 
-import './App.css';
+const renderHome = () => <Home/>
+const renderGetStarted = () => <GetStarted/>
+const renderAboutUs = () => <AboutUs/>
 
-import NavMenu from './components/NavMenu';
-import MainContainer from './components/MainContainer';
+const App = () => (
+  <Router>
+    <NavMenu>
+      <Switch>
+        <Route exact path="/home" render={renderHome} />
+        <Route exact path="/get-started" render={renderGetStarted} />
+        <Route exact path="/about-us" render={renderAboutUs} />
 
+        {/* <Redirect path="/" /> */}
+      </Switch>
+    </NavMenu>  
+  </Router>
+)
 
-
-class App extends Component {
-  render() {
-    return (
-      <div>
-      <div className="App">
-        <NavMenu />
-        
-        {/* // TODO: Add react router as HW */}
-      </div>
-      <div>
-        <MainContainer />
-      </div>
-      </div>
-    )
-  }
-};
-
-export default App;
+export default App
