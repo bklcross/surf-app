@@ -4,11 +4,6 @@ import { Menu } from 'semantic-ui-react'
 
 export default class NavMenu extends Component {
   state = {}
-
-  componentDidMount = () => {
-    console.log('Hi Brian I mounted onto the DOM!!!!')
-  }
-
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
@@ -28,19 +23,19 @@ export default class NavMenu extends Component {
         </Menu.Item>
 
         <Menu.Item
+          name='Get Started'
+          active={activeItem === 'Get Started'}
+          onClick={this.handleItemClick}
+        >
+          Get Started
+        </Menu.Item>
+
+        <Menu.Item
           name='About'
           active={activeItem === 'About'}
           onClick={this.handleItemClick}
         >
           About Us
-        </Menu.Item>
-
-        <Menu.Item
-          name='surfConditions'
-          active={activeItem === 'surfConditions'}
-          onClick={this.handleItemClick}
-        >
-          Surf Conditions
         </Menu.Item>
       </Menu>
     )
