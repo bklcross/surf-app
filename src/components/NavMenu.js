@@ -7,37 +7,41 @@ export default class NavMenu extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
+    const { children } = this.props
     const { activeItem } = this.state
 
     return (
-      <Menu
-        color='teal'
-        inverted
-        widths={3} >
-        <Menu.Item
-          name='home'
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        >
-          Home
-        </Menu.Item>
+      <div>
+        <Menu
+          color='teal'
+          inverted
+          widths={3} >
+          <Menu.Item
+            name='home'
+            active={activeItem === 'home'}
+            onClick={this.handleItemClick}
+          >
+            Home
+          </Menu.Item>
 
-        <Menu.Item
-          name='Get Started'
-          active={activeItem === 'Get Started'}
-          onClick={this.handleItemClick}
-        >
-          Get Started
-        </Menu.Item>
+          <Menu.Item
+            name='Get Started'
+            active={activeItem === 'Get Started'}
+            onClick={this.handleItemClick}
+          >
+            Get Started
+          </Menu.Item>
 
-        <Menu.Item
-          name='About'
-          active={activeItem === 'About'}
-          onClick={this.handleItemClick}
-        >
-          About Us
-        </Menu.Item>
-      </Menu>
+          <Menu.Item
+            name='About'
+            active={activeItem === 'About'}
+            onClick={this.handleItemClick}
+          >
+            About Us
+          </Menu.Item>
+        </Menu>
+        { children }
+      </div>
     )
   }
 }

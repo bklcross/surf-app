@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 export default class Home extends Component {
-    render () {
-        return (
-            <h1>
-                Home
-            </h1>
-        )
-    }   
+  render () {
+      return (
+        <div>
+          <h1>
+              Hey son we made it this is the home page!!
+          </h1>
+        </div>
+      )
+  }
 }
